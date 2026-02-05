@@ -21,7 +21,8 @@ function createPlayer(nickname, skill) {
     return {nickname, skill, getLevel, increaseLevel, levelUpper}
 }
 
-function startGame() {
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+async function startGame() {
     let chalenge = prompt('Qual Level será o objetivo? ');
     let player1 = createPlayer('Blwkz', Math.random()*100);
     let player2 = createPlayer('Kory', Math.random()*100);
@@ -31,6 +32,6 @@ function startGame() {
         player2.levelUpper();
         console.log(`${player1.nickname}: Skill: ${player1.skill} Level:${player1.getLevel()}`);
         console.log(`${player2.nickname}: Skill: ${player2.skill} Level: ${player2.getLevel()}`);
-        
+        await sleep(2000);
     }
 }
