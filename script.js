@@ -10,8 +10,17 @@ function createPlayer(nickname, skill) {
         level++;
     }
     const levelUpper = () => {
-        
+        if (level >= 5) {
+            roof++;
+        }
+
+        if (skill > roof) {
+            increaseLevel();
+        }
+        else {
+            skill++;
+        }
     }  
 
-    return {nickname, skill, getLevel, increaseLevel}
+    return {nickname, skill, getLevel, increaseLevel, levelUpper}
 }
