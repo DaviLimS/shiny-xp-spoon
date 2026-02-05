@@ -29,7 +29,8 @@ function startGame() {
     while(player1.getLevel() < chalenge || player2.getLevel() < chalenge) {
         player1.levelUpper();
         player2.levelUpper();
-        console.log(`${player1.nickname}: Skill: ${player1.skill} Level:${player1.getLevel}`);
-        console.log(`${player2.nickname}: Skill: ${player2.skill} Level: ${player2.getLevel}`);
+        console.log(`${player1.nickname}: Skill: ${player1.skill} Level:${player1.getLevel()}`);
+        console.log(`${player2.nickname}: Skill: ${player2.skill} Level: ${player2.getLevel()}`);
+        
     }
 }
