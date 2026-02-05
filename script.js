@@ -1,7 +1,3 @@
-function startGame() {
-    let chalenge = prompt('Qual Level será o objetivo? ');
-}
-
 function createPlayer(nickname, skill) {
     let level = 0;
     let roof = 0;
@@ -23,4 +19,12 @@ function createPlayer(nickname, skill) {
     }  
 
     return {nickname, skill, getLevel, increaseLevel, levelUpper}
+}
+
+function startGame() {
+    let chalenge = prompt('Qual Level será o objetivo? ');
+    let player1 = createPlayer('Blwkz', Math.random()*100);
+    let player2 = createPlayer('Kory', Math.random()*100);
+
+    while(player1.getLevel() < chalenge || player2.getLevel()) {}
 }
