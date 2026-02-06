@@ -6,15 +6,14 @@ function createPlayer(nickname, skill) {
         level++;
     }
     const levelUpper = () => {
-        if (level >= 5) {
-            roof++;
-        }
-
         if (skill > roof) {
             increaseLevel();
+            if (level >= 5) {
+                roof += Math.random() * 10;
+            }
         }
         else {
-            skill++;
+            skill += Math.random() * 10 / 2;
         }
     }  
 
@@ -23,9 +22,13 @@ function createPlayer(nickname, skill) {
 
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 async function startGame() {
-    let chalenge = prompt('Qual Level será o objetivo? ');
+    let chalenge = parseInt(prompt('Qual Level será o objetivo? '));
     let player1 = createPlayer('Blwkz', Math.random()*100);
     let player2 = createPlayer('Kory', Math.random()*100);
+
+    console.log(chalenge,
+        typeof(chalenge)
+    );
 
     while(player1.getLevel() < chalenge || player2.getLevel() < chalenge) {
         player1.levelUpper();
@@ -34,4 +37,8 @@ async function startGame() {
         console.log(`${player2.nickname}: Skill: ${player2.skill} Level: ${player2.getLevel()}`);
         await sleep(2000);
     }
+
+    if (player1.getLevel() === chalenge) {}
 }
+
+startGame();
