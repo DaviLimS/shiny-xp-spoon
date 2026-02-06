@@ -26,10 +26,6 @@ async function startGame() {
     let player1 = createPlayer('Blwkz', Math.random()*100);
     let player2 = createPlayer('Kory', Math.random()*100);
 
-    console.log(chalenge,
-        typeof(chalenge)
-    );
-
     while(player1.getLevel() < chalenge || player2.getLevel() < chalenge) {
         player1.levelUpper();
         player2.levelUpper();
