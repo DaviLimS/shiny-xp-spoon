@@ -34,7 +34,7 @@ async function startGame() {
         await sleep(2000);
     }
 
-    if (player1.getLevel() === chalenge) {}
+    player1.getLevel() === chalenge ? console.log(`${player1.nickname} Won!!`) : console.log(`${player2.nickname} Wonn!!`);
 }
 
 startGame();
